@@ -28,7 +28,15 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('style.css') ?>
-
+    
+	<?= $this->Html->css('bootstrap.min.css') ?> 
+    <?= $this->Html->css('/font-awesome/4.5.0/css/font-awesome.min.css') ?> 
+    <?= $this->Html->css('fonts.googleapis.com.css') ?> 
+    <?= $this->Html->css('ace.min.css') ?> 
+    <?= $this->Html->css('ace-rtl.min.css') ?> 
+    <?= $this->Html->script('jquery-2.1.4.min.js') ?> 
+    <?= $this->Html->script('jquery.mobile.custom.min.js') ?> 
+    
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
@@ -58,5 +66,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </div>
     <footer>
     </footer>
+    
 </body>
 </html>
