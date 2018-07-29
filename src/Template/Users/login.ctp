@@ -91,28 +91,30 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 									
 
     								
-											<label class="block clearfix"> <span
-												class="block input-icon input-icon-right"> <i
-													class="ace-icon fa fa-user"></i> <?= $this->Form->input('email',['class' => 'form-control',
+											<label class="block clearfix"> 
+												<span class="block input-icon input-icon-right">
+												 <i	class="ace-icon fa fa-user"></i> 
+												 
+													<?= $this->Form->input('email',['class' => 'form-control',
 					            												    'placeholder'=> 'Username',
-					            												    'label' => 'Username'
-					            												    ,'escape' =>false]) ?>
+					            												    'required' => true,					            												 
+					            												    'label' => 'Username']) ?>
 
-											</span>
-											</label> <label class="block clearfix"> <span
-												class="block input-icon input-icon-right"> <?= $this->Form->input('password',['class'      => 'form-control',
-					            'placeholder'=> 'Password']) ?> <i
-													class="ace-icon fa fa-lock"></i>
-											</span>
+												</span>
+											</label> 
+											<label class="block clearfix"> 
+												<span class="block input-icon input-icon-right"> 
+												<?= $this->Form->input('password', ['class'      => 'form-control',
+					            													'placeholder'=> 'Password','required' => true]) ?> 
+					            				<i class="ace-icon fa fa-lock"></i>
+												</span>
 											</label>
 
 											<div class="space"></div>
 
-											<div class="clearfix">
+											<div class="clearfix">						
 
-
-												<?= $this->Form->button('Login',['class'=>'width-35 pull-right btn btn-sm btn-primary']) ?>
-
+												<?= $this->Form->button($this->Html->tag("i", "<span></span>",array("class" => "ace-icon fa fa-key")). " Login", ['class'=>'width-35 pull-right btn btn-sm btn-primary']) ?>
 
 											</div>
 
