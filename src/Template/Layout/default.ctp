@@ -26,8 +26,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('style.css') ?>
+   
     
 	<?= $this->Html->css('bootstrap.min.css') ?> 
     <?= $this->Html->css('/font-awesome/4.5.0/css/font-awesome.min.css') ?> 
@@ -36,6 +35,19 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->css('ace-rtl.min.css') ?> 
     <?= $this->Html->script('jquery-2.1.4.min.js') ?> 
     <?= $this->Html->script('jquery.mobile.custom.min.js') ?> 
+    	
+    <!--[if lte IE 9]>
+	   <?= $this->Html->css('ace-ie.min.css') ?> 
+	<![endif]-->
+
+	
+	<!--[if lte IE 8]>
+	
+	   <?= $this->Html->script('html5shiv.min.js') ?> 
+	   <?= $this->Html->script('respond.min.js') ?> 
+		
+		<![endif]-->
+    
     
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
