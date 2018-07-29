@@ -56,17 +56,17 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 </head>
 
 <body class="login-layout ">
-	<div class="main-container">
+	<div class="main-container ">
 		<div class="main-content">
-			<div class="row">
+			<div class="">
 				<div class="col-sm-10 col-sm-offset-1">
 					<div class="login-container">
 						<div class="center">
 							<h1>
-								<i class="ace-icon fa fa-leaf green"></i> <span class="red">Generic</span>
+								<i class="ace-icon fa fa-user blue"></i> <span class="blue">Generic</span>
 								<span class="white" id="id-text2">Aplicação</span>
 							</h1>
-							<h4 class="blue" id="id-company-text">&copy; RWD Company</h4>
+							<h4 class="red" id="id-company-text">&copy; RWD Company</h4>
 						</div>
 
 						<div class="space-6"></div>
@@ -77,7 +77,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 								<div class="widget-body">
 									<div class="widget-main">
 										<h4 class="header blue lighter bigger">
-											<i class="ace-icon fa fa-coffee green"></i> Por favor, insira
+											<i class="ace-icon fa fa-coffee blue"></i> Por favor, insira
 											suas informações
 										</h4>
 
@@ -86,22 +86,16 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 										<?= $this->Form->create() ?>
 
 										<fieldset>
-									
-											
-    										  <div class="alert alert-danger" onclick="this.classList.add('hidden');">
-												
-
-											
+														
 												 <?= $this->Flash->render() ?>
 									
 
-											<br />
-										</div>  
     								
 											<label class="block clearfix"> <span
 												class="block input-icon input-icon-right"> <i
 													class="ace-icon fa fa-user"></i> <?= $this->Form->input('email',['class' => 'form-control',
-					            												    'placeholder'=> 'Username'
+					            												    'placeholder'=> 'Username',
+					            												    'label' => 'Username'
 					            												    ,'escape' =>false]) ?>
 
 											</span>

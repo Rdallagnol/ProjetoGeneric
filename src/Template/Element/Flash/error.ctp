@@ -1,3 +1,4 @@
+<div class="alert alert-danger" onclick="this.classList.add('hidden');">
 <?php
 if (!isset($params['escape']) || $params['escape'] !== false) {
     $message = h($message);
@@ -9,3 +10,5 @@ if (!isset($params['escape']) || $params['escape'] !== false) {
 	<i class="ace-icon fa fa-times"></i>		
 </strong>
 <?= $message ?></div>
+	<br />
+											</div> 

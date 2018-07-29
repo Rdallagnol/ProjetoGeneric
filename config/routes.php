@@ -52,7 +52,7 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->connect('/', [
         'controller' => 'Users',
-        'action' => 'index',
+        'action' => 'login',
         'home'
     ]);
 

@@ -20,7 +20,7 @@ class UsersController extends AppController
         if($this->Auth->user()){
             $this->Auth->allow();
         }else{
-            $this->Auth->allow(['login','logout']);
+            $this->Auth->allow(['login']);
         }
      }
     
@@ -119,7 +119,9 @@ class UsersController extends AppController
     
     public function login()
     {
-       
+        if($this->Auth->user()){
+            return $this->redirect(['action' => 'index']);
+        }
        
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
@@ -134,7 +136,7 @@ class UsersController extends AppController
     public function logout()
     {
         $this->layout = false;
-        $this->Flash->success('Você está desconectado, favor realizar login.');
+        //$this->Flash->success('Você está desconectado, favor realizar login.');
         return $this->redirect($this->Auth->logout());
     }
 }
