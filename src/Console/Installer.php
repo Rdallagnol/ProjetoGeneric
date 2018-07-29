@@ -18,9 +18,14 @@ if (!defined('STDIN')) {
     define('STDIN', fopen('php://stdin', 'r'));
 }
 
+use Cake\Core\Exception\Exception;
+use function Cake\Filesystem\File\copy;
 use Cake\Utility\Security;
+use function Cake\Utility\Security\hash;
 use Composer\Script\Event;
-use Exception;
+use function Symfony\Component\Filesystem\Filesystem\chmod;
+use function Symfony\Component\Filesystem\Filesystem\mkdir;
+use function josegonzalez\Dotenv\Loader\define;
 
 /**
  * Provides installation hooks for when this application is installed via
@@ -47,7 +52,7 @@ class Installer
      * Does some routine installation tasks so people don't have to.
      *
      * @param \Composer\Script\Event $event The composer event object.
-     * @throws \Exception Exception raised by validator.
+     * @throws \Cake\Core\Exception\Exception Exception raised by validator.
      * @return void
      */
     public static function postInstall(Event $event)
