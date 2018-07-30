@@ -1,35 +1,15 @@
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(255) NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    created DATETIME,
-    modified DATETIME
-);
 
-CREATE TABLE bookmarks (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
-    title VARCHAR(50),
-    description TEXT,
-    url TEXT,
-    created DATETIME,
-    modified DATETIME,
-    FOREIGN KEY user_key (user_id) REFERENCES users(id)
-);
- 
-CREATE TABLE tags (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(255),
-    created DATETIME,
-    modified DATETIME,
-    UNIQUE KEY (title)
-);
+DROP TABLE IF EXISTS `gc_users`;
+CREATE TABLE IF NOT EXISTS `gc_users` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
-CREATE TABLE bookmarks_tags (
-    bookmark_id INT NOT NULL,
-    tag_id INT NOT NULL,
-    PRIMARY KEY (bookmark_id, tag_id),
-    INDEX tag_idx (tag_id, bookmark_id),
-    FOREIGN KEY tag_key(tag_id) REFERENCES tags(id),
-    FOREIGN KEY bookmark_key(bookmark_id) REFERENCES bookmarks(id)
-);
+INSERT INTO `gc_users` (`user_id`, `email`, `password`, `created`, `modified`) VALUES
+(1, 'rodrigo@gmail.com', '$2y$10$OtOx0saxHxByDsDEoDLhiuIo6x9XTAIN6O7HuYG/3bEGi.V/X6Ooq', '2018-07-28 02:28:50', '2018-07-28 02:28:50');
+COMMIT;
+
