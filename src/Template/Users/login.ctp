@@ -51,7 +51,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <?= $this->fetch('script') ?>
 </head>
 
-<body class="login-layout ">
+<body class="login-layout light-login">
 	<div class="main-container ">
 		<div class="main-content">
 			<div class="">
