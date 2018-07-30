@@ -25,10 +25,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <title><?= $cakeDescription ?>: <?= $this->fetch('title') ?>
 </title>
 <?= $this->Html->meta('icon') ?>
-
-<?= $this->Html->css('base.css') ?>
-<?= $this->Html->css('style.css') ?>
-
 <?= $this->Html->css('bootstrap.min.css') ?>
 <?= $this->Html->css('/font-awesome/4.5.0/css/font-awesome.min.css') ?>
 <?= $this->Html->css('fonts.googleapis.com.css') ?>
@@ -94,10 +90,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 											<label class="block clearfix"> 
 												<span class="block input-icon input-icon-right">
 												 <i	class="ace-icon fa fa-user"></i> 
-												 
+
 													<?= $this->Form->input('email',['class' => 'form-control',
 					            												    'placeholder'=> 'Username',
-					            												    'required' => true,					            												 
+					            															            												 
 					            												    'label' => 'Username']) ?>
 
 												</span>
@@ -105,7 +101,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 											<label class="block clearfix"> 
 												<span class="block input-icon input-icon-right"> 
 												<?= $this->Form->input('password', ['class'      => 'form-control',
-					            													'placeholder'=> 'Password','required' => true]) ?> 
+					            													'placeholder'=> 'Password']) ?> 
 					            				<i class="ace-icon fa fa-lock"></i>
 												</span>
 											</label>
