@@ -83,18 +83,21 @@ $cakeDescription = 'Projeto Generic';
                     <span class="icon-bar"></span>
                 </button>
 
-                <div class="navbar-header pull-left">
-                    <a href="index.html" class="navbar-brand">
-                        <small>
-                            <i class="fa fa-user"></i>
-                          Generic Project
-                        </small>
-                    </a>
-                </div>
+               
 
+
+                <div class="navbar-header pull-left">
+                       
+                          
+                        <?php echo $this->Html->link(
+                                    ' <small><i class="fa fa-user"></i> Generic Project     </small>',
+                                    arraY('action' => 'index'),['class'=>'navbar-brand','escape'=>false]
+                                ); ?>
+                    
+                    </div>
                 <div class="navbar-buttons navbar-header pull-right" role="navigation">
                     <ul class="nav ace-nav">
-                        <li class="grey dropdown-modal">
+                       <!--  <li class="grey dropdown-modal">
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <i class="ace-icon fa fa-tasks"></i>
                                 <span class="badge badge-grey">4</span>
@@ -169,9 +172,9 @@ $cakeDescription = 'Projeto Generic';
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
 
-                        <li class="purple dropdown-modal">
+                        <!--<li class="purple dropdown-modal">
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <i class="ace-icon fa fa-bell icon-animated-bell"></i>
                                 <span class="badge badge-important">8</span>
@@ -237,9 +240,9 @@ $cakeDescription = 'Projeto Generic';
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
 
-                        <li class="green dropdown-modal">
+                        <!-- <li class="green dropdown-modal">
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
                                 <span class="badge badge-success">5</span>
@@ -347,14 +350,14 @@ $cakeDescription = 'Projeto Generic';
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
 
                         <li class="light-blue dropdown-modal">
                             <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                                <img class="nav-user-photo" src="assets/images/avatars/user.jpg" alt="Jason's Photo" />
+                                <?php echo $this->Html->image('logo.png', ['alt' => 'CakePHP', 'class' => 'nav-user-photo']); ?>
                                 <span class="user-info">
                                     <small>Bem vindo,</small>
-                                    Jason
+                                    <?= $this->request->session()->read('Auth.User.name'); ?>
                                 </span>
 
                                 <i class="ace-icon fa fa-caret-down"></i>
@@ -402,7 +405,7 @@ $cakeDescription = 'Projeto Generic';
                 </script>
 
                 <div class="sidebar-shortcuts" id="sidebar-shortcuts">
-                    <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                   <!-- <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
                         <button class="btn btn-success">
                             <i class="ace-icon fa fa-signal"></i>
                         </button>
@@ -428,19 +431,21 @@ $cakeDescription = 'Projeto Generic';
                         <span class="btn btn-warning"></span>
 
                         <span class="btn btn-danger"></span>
-                    </div>
-                </div><!-- /.sidebar-shortcuts -->
+                    </div>-->
+                </div>
+                
+                <!-- /.sidebar-shortcuts -->
 
                 <ul class="nav nav-list">
                     <li class="active">
                         <a href="index.html">
-                            <i class="menu-icon fa fa-tachometer"></i>
-                            <span class="menu-text"> Dashboard </span>
+                            <i class="menu-icon glyphicon glyphicon-file"></i>
+                            <span class="menu-text">  Relatório de campo  </span>
                         </a>
 
                         <b class="arrow"></b>
                     </li>
-
+<!--
                     <li class="">
                         <a href="#" class="dropdown-toggle">
                             <i class="menu-icon fa fa-desktop"></i>
@@ -908,8 +913,9 @@ $cakeDescription = 'Projeto Generic';
                                 <b class="arrow"></b>
                             </li>
                         </ul>
-                    </li>
-                </ul><!-- /.nav-list -->
+                    </li> -->
+                </ul>
+                <!-- /.nav-list -->
 
                 <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
                     <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>

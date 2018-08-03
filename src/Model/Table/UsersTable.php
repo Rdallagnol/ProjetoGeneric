@@ -36,7 +36,7 @@ class UsersTable extends Table
         parent::initialize($config);
 
         $this->setTable('gc_users');
-        $this->setDisplayField('email');
+        $this->setDisplayField('name');
         $this->setPrimaryKey('user_id');
 
         $this->addBehavior('Timestamp');
@@ -58,6 +58,10 @@ class UsersTable extends Table
             ->integer('user_id')
             ->allowEmpty('user_id', 'create');
 
+        $validator   
+            ->requirePresence('name')
+            ->notEmpty('name');
+        
         $validator
             ->email('email')
             ->requirePresence('email', 'create')
