@@ -31,6 +31,7 @@ class UsersController extends AppController
      */
     public function index()
     {
+        
         $users = $this->paginate($this->Users);
 
         $this->set(compact('users'));
@@ -119,6 +120,7 @@ class UsersController extends AppController
     
     public function login()
     {
+        $this->layout = false;
         if($this->Auth->user()){
             return $this->redirect(['action' => 'index']);
         }

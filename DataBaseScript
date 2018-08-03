@@ -2,6 +2,7 @@
 DROP TABLE IF EXISTS `gc_users`;
 CREATE TABLE IF NOT EXISTS `gc_users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `created` datetime DEFAULT NULL,
@@ -9,7 +10,7 @@ CREATE TABLE IF NOT EXISTS `gc_users` (
   PRIMARY KEY (`user_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
-INSERT INTO `gc_users` (`user_id`, `email`, `password`, `created`, `modified`) VALUES
-(1, 'rodrigo@gmail.com', '$2y$10$OtOx0saxHxByDsDEoDLhiuIo6x9XTAIN6O7HuYG/3bEGi.V/X6Ooq', '2018-07-28 02:28:50', '2018-07-28 02:28:50');
+INSERT INTO `gc_users` (`user_id`,`name`, `email`, `password`, `created`, `modified`) VALUES
+(1, 'admin', 'admin@gmail.com', '$2y$10$OtOx0saxHxByDsDEoDLhiuIo6x9XTAIN6O7HuYG/3bEGi.V/X6Ooq', '2018-07-28 02:28:50', '2018-07-28 02:28:50');
 COMMIT;
 
