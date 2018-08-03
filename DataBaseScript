@@ -1,4 +1,6 @@
 
+## generico
+
 DROP TABLE IF EXISTS `gc_users`;
 CREATE TABLE IF NOT EXISTS `gc_users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -13,4 +15,17 @@ CREATE TABLE IF NOT EXISTS `gc_users` (
 INSERT INTO `gc_users` (`user_id`,`name`, `email`, `password`, `created`, `modified`) VALUES
 (1, 'admin', 'admin@gmail.com', '$2y$10$OtOx0saxHxByDsDEoDLhiuIo6x9XTAIN6O7HuYG/3bEGi.V/X6Ooq', '2018-07-28 02:28:50', '2018-07-28 02:28:50');
 COMMIT;
+
+
+
+## modulo agro
+CREATE TABLE IF NOT EXISTS `ag_registro_tec` (
+  `tec_reg_id` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(255) NOT NULL,
+  `descricao` TEXT NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`tec_reg_id`)
+) 
 

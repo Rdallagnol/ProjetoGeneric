@@ -15,14 +15,7 @@ class UsersController extends AppController
 {
 
    
-    public function beforeFilter(Event $event)
-    {
-        if($this->Auth->user()){
-            $this->Auth->allow();
-        }else{
-            $this->Auth->allow(['login']);
-        }
-     }
+  
     
     /**
      * Index method
@@ -32,11 +25,23 @@ class UsersController extends AppController
     public function index()
     {
         
-        $users = $this->paginate($this->Users);
-
-        $this->set(compact('users'));
+       
     }
 
+    
+    /**
+     * Index method
+     *
+     * @return \Cake\Http\Response|void
+     */
+    public function listar()
+    {
+        
+        $users = $this->paginate($this->Users);
+        
+        $this->set(compact('users'));
+    }
+    
     /**
      * View method
      *

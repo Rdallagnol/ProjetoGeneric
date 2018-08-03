@@ -13,7 +13,7 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = 'Projeto Generic';
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -71,6 +71,7 @@ $cakeDescription = 'Projeto Generic';
     <?= $this->fetch('script') ?>
 </head>
 <body class="no-skin">
+    
 	<div id="navbar" class="navbar navbar-default          ace-save-state">
             <div class="navbar-container ace-save-state" id="navbar-container">
                 <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
@@ -90,8 +91,8 @@ $cakeDescription = 'Projeto Generic';
                        
                           
                         <?php echo $this->Html->link(
-                                    ' <small><i class="fa fa-user"></i> Generic Project     </small>',
-                                    arraY('action' => 'index'),['class'=>'navbar-brand','escape'=>false]
+                                    ' <small><i class="fa fa-user"></i> '.  $cakeDescription .'</small>',
+                                    arraY('controller' => 'Users','action' => 'index'),['class'=>'navbar-brand','escape'=>false]
                                 ); ?>
                     
                     </div>
@@ -364,7 +365,7 @@ $cakeDescription = 'Projeto Generic';
                             </a>
 
                             <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-                                <li>
+                                <!-- <li>
                                     <a href="#">
                                         <i class="ace-icon fa fa-cog"></i>
                                         Settings
@@ -376,7 +377,7 @@ $cakeDescription = 'Projeto Generic';
                                         <i class="ace-icon fa fa-user"></i>
                                         Profile
                                     </a>
-                                </li>
+                                </li> -->
 
                                 <li class="divider"></li>
 
@@ -438,13 +439,16 @@ $cakeDescription = 'Projeto Generic';
 
                 <ul class="nav nav-list">
                     <li class="active">
-                        <a href="index.html">
-                            <i class="menu-icon glyphicon glyphicon-file"></i>
-                            <span class="menu-text">  Relatório de campo  </span>
-                        </a>
+                      
 
-                        <b class="arrow"></b>
+                        <?php echo $this->Html->link(
+                                    '<i class="menu-icon glyphicon glyphicon-file"></i>
+                                     <span class="menu-text">'.utf8_decode('Relatório de campo'). '</span>',
+                              array('controller' => 'RegistroTecs', 'action' => 'index'),['escape'=>false]); ?>
+
+                        <b class="arrow"></b>   
                     </li>
+
 <!--
                     <li class="">
                         <a href="#" class="dropdown-toggle">
@@ -928,9 +932,9 @@ $cakeDescription = 'Projeto Generic';
                         <ul class="breadcrumb">
                             <li>
                                 <i class="ace-icon fa fa-home home-icon"></i>
-                                <a href="#">Home</a>
+                               <?= $this->fetch('title') ?>
                             </li>
-                            <li class="active">Dashboard</li>
+                            <li class="active"> <?= $this->request->action ?></li>
                         </ul><!-- /.breadcrumb -->
 
                         <div class="nav-search" id="nav-search">
@@ -946,7 +950,7 @@ $cakeDescription = 'Projeto Generic';
                     <div class="page-content">
                        
 
-                        <div class="page-header">
+                        <!-- <div class="page-header">
                             <h1>
                                 <?= $this->fetch('title') ?>
                                 <small>
@@ -955,7 +959,9 @@ $cakeDescription = 'Projeto Generic';
                               
                                 </small>
                             </h1>
-                        </div><!-- /.page-header -->
+                        </div>
+                        -->
+                        <!-- /.page-header -->
 
                         <div class="row">
                             <div class="col-xs-12">

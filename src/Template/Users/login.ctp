@@ -52,6 +52,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 </head>
 
 <body class="login-layout light-login">
+
+
+
 	<div class="main-container ">
 		<div class="main-content">
 			<div class="">

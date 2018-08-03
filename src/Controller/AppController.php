@@ -28,6 +28,16 @@ use Cake\Event\Event;
 class AppController extends Controller
 {
 
+    
+    public function beforeFilter(Event $event)
+    {
+        $this->set('cakeDescription','Agrobe');
+        if($this->Auth->user()){
+            $this->Auth->allow();
+        }else{
+            $this->Auth->allow(['login']);
+        }
+    }
     /**
      * Initialization hook method.
      *

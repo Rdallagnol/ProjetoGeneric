@@ -9,10 +9,8 @@
                         </button>
 
                         <i class="ace-icon fa fa-check green"></i>
-                            Bem vindo
-                        <strong class="green">
-                           <small><?= $this->request->session()->read('Auth.User.name'); ?></small>
-                        </strong>
+                            REGISTRO TEC INDEX
+                        
                
                     </div>
                </div>
