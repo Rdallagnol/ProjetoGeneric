@@ -13,16 +13,17 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = 'Agrobe';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<?= $this->Html->charset() ?>
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<title><?= $cakeDescription ?>: <?= $this->fetch('title') ?>
+<title><?= $cakeDescription ?> <?= $this->fetch('title') ?>
 </title>
 <?= $this->Html->meta('icon') ?>
 <?= $this->Html->css('bootstrap.min.css') ?>
@@ -62,8 +63,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 					<div class="login-container">
 						<div class="center">
 							<h1>
-								<i class="ace-icon fa fa-user blue"></i> <span class="blue">Generic</span>
-								<span class="white" id="id-text2">Aplicação</span>
+								 <?php echo $this->Html->image('agrobe.png', ['alt' => 'Agrobe']); ?>
+								
 							</h1>
 							<h4 class="red" id="id-company-text">&copy; RWD Company</h4>
 						</div>
@@ -76,8 +77,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 								<div class="widget-body">
 									<div class="widget-main">
 										<h4 class="header blue lighter bigger">
-											<i class="ace-icon fa fa-coffee blue"></i> Por favor, insira
-											suas informações
+											<i class="ace-icon fa fa-laptop blue"></i> 
+											Insira suas <?php echo utf8_encode('informações'); ?>
 										</h4>
 
 										<div class="space-6"></div>
@@ -94,10 +95,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 												<span class="block input-icon input-icon-right">
 												 <i	class="ace-icon fa fa-user"></i> 
 
-													<?= $this->Form->input('email',['class' => 'form-control',
-					            												    'placeholder'=> 'Username',
-					            															            												 
-					            												    'label' => 'Username']) ?>
+														<?= $this->Form->input('email',['class' => 'form-control',
+					            												    'placeholder'=> 'Email',					 
+					            												    'label' => 'Email']) ?>
 
 												</span>
 											</label> 

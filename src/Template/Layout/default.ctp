@@ -72,7 +72,7 @@
 </head>
 <body class="no-skin">
     
-	<div id="navbar" class="navbar navbar-default          ace-save-state">
+	<div id="navbar" class="navbar navbar-default ace-save-state">
             <div class="navbar-container ace-save-state" id="navbar-container">
                 <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
                     <span class="sr-only">Toggle sidebar</span>
@@ -91,11 +91,11 @@
                        
                           
                         <?php echo $this->Html->link(
-                                    ' <small><i class="fa fa-user"></i> '.  $cakeDescription .'</small>',
+                                    ' <small>'.  $this->Html->image('ab.png', ['alt' => 'Agrobe']).'  Agrobe</small>',
                                     arraY('controller' => 'Users','action' => 'index'),['class'=>'navbar-brand','escape'=>false]
                                 ); ?>
                     
-                    </div>
+                </div>
                 <div class="navbar-buttons navbar-header pull-right" role="navigation">
                     <ul class="nav ace-nav">
                        <!--  <li class="grey dropdown-modal">
@@ -443,7 +443,7 @@
 
                         <?php echo $this->Html->link(
                                     '<i class="menu-icon glyphicon glyphicon-file"></i>
-                                     <span class="menu-text">'.utf8_decode('Relatório de campo'). '</span>',
+                                     <span class="menu-text">Relatório de campo</span>',
                               array('controller' => 'RegistroTecs', 'action' => 'index'),['escape'=>false]); ?>
 
                         <b class="arrow"></b>   

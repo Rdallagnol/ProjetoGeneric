@@ -15,13 +15,13 @@
 
 
 <div class="users form large-9 medium-8 columns content">
-    <?= $this->Form->create($user) ?>
+    <?= $this->Form->create($registroTec) ?>
     <fieldset>
         <legend><?= __('Add User') ?></legend>
         <?php
-            echo $this->Form->control('name');
-            echo $this->Form->control('email');
-            echo $this->Form->control('password');
+            echo $this->Form->control('titulo');
+            echo $this->Form->control('descricao');
+       
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

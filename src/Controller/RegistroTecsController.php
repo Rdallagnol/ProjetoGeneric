@@ -1,8 +1,7 @@
 <?php
 namespace App\Controller;
-
 use App\Controller\AppController;
-
+use App\Model\Entity\RegistroTec;
 /**
  * Bookmarks Controller
  *
@@ -12,9 +11,8 @@ use App\Controller\AppController;
  */
 class RegistroTecsController extends AppController
 {
-
     public function isAuthorized($user)
-    {     
+    {
         return parent::isAuthorized($user);
     }
     
@@ -28,16 +26,15 @@ class RegistroTecsController extends AppController
     {
         $this->paginate = [
             'conditions' => [
-                'RegistroTecs.user_id' => $this->Auth->user('users_id')
+                'RegistroTecs.user_id' => $this->Auth->user('user_id')
             ]
         ];
-        $this->set('registroTec', $this->paginate($this->RegistroTecs)); 
+        $this->set('registroTec', $this->paginate($this->RegistroTecs));
     }
-
     /**
      * View method
      *
-     * @param string|null $id Bookmark id.
+     * @param string|null $id RegistroTec id.
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
@@ -46,10 +43,8 @@ class RegistroTecsController extends AppController
         $registroTec = $this->RegistroTecs->get($id, [
             'contain' => ['Users']
         ]);
-
         $this->set('registroTec', $registroTec);
     }
-
     /**
      * Add method
      *
@@ -60,17 +55,15 @@ class RegistroTecsController extends AppController
         $registroTec = $this->RegistroTecs->newEntity();
         if ($this->request->is('post')) {
             $registroTec = $this->RegistroTecs->patchEntity($registroTec, $this->request->getData());
-            $registroTec->user_id = $this->Auth->user('id');
+            $registroTec->user_id = $this->Auth->user('user_id');
             if ($this->RegistroTecs->save($registroTec)) {
-                $this->Flash->success('The bookmark has been saved.');
+                $this->Flash->success('Relatório técnico registrado com sucesso.');
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error('The bookmark could not be saved. Please, try again.');
+            $this->Flash->error('Não foi possível registrar Relatório.');
         }
-        $tags = $this->Bookmarks->Tags->find('list');
-        $this->set(compact('bookmark', 'tags'));
+        $this->set(compact('registroTec'));
     }
-
     /**
      * Edit method
      *
@@ -80,22 +73,21 @@ class RegistroTecsController extends AppController
      */
     public function edit($id = null)
     {
-        $registroTec = $this->RegistroTecs->get($id, [
-            'contain' => ['Tags']
-        ]);
+        $registroTec = $this->RegistroTecs->get($id);
+        
         if ($this->request->is(['patch', 'post', 'put'])) {
             $registroTec = $this->RegistroTecs->patchEntity($registroTec, $this->request->getData());
-            $registroTec->user_id = $this->Auth->user('id');
+            $registroTec->user_id = $this->Auth->user('user_id');
+            
             if ($this->RegistroTecs->save($registroTec)) {
-                $this->Flash->success('The bookmark has been saved.');
+                $this->Flash->success('Relatório técnico alterado com sucesso.');
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error('The bookmark could not be saved. Please, try again.');
+            $this->Flash->error('Não foi possível registrar Relatório.');
         }
-   
+        
         $this->set(compact('registroTec'));
     }
-
     /**
      * Delete method
      *
@@ -108,13 +100,12 @@ class RegistroTecsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $registroTec = $this->RegistroTecs->get($id);
         if ($this->RegistroTecs->delete($registroTec)) {
-            $this->Flash->success(__('The bookmark has been deleted.'));
+            $this->Flash->success(__('Relatório técnico removido com sucesso.'));
         } else {
-            $this->Flash->error(__('The bookmark could not be deleted. Please, try again.'));
+            $this->Flash->error(__('Não foi possível remover o Relatório.'));
         }
-
         return $this->redirect(['action' => 'index']);
     }
     
-      
+    
 }
