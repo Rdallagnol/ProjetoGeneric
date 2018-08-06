@@ -355,7 +355,7 @@
 
                         <li class="light-blue dropdown-modal">
                             <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                                <?php echo $this->Html->image('logo.png', ['alt' => 'CakePHP', 'class' => 'nav-user-photo']); ?>
+                                <?php echo $this->Html->image('logo.png', ['alt' => 'userImg', 'class' => 'nav-user-photo']); ?>
                                 <span class="user-info">
                                     <small>Bem vindo,</small>
                                     <?= $this->request->session()->read('Auth.User.name'); ?>
@@ -371,13 +371,13 @@
                                         Settings
                                     </a>
                                 </li>
-
+ -->
                                 <li>
-                                    <a href="profile.html">
-                                        <i class="ace-icon fa fa-user"></i>
-                                        Profile
-                                    </a>
-                                </li> -->
+                                    
+
+                                    <?php echo $this->Html->link($this->Html->tag("i", "<span></span>",array("class" => "ace-icon fa fa-user")). ' Profile', array('controller' => 'users', 'action' => 'view', $this->request->session()->read('Auth.User.user_id')),array('escape' => false)); ?>
+
+                                </li>
 
                                 <li class="divider"></li>
 

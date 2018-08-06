@@ -57,7 +57,7 @@ class AppController extends Controller
         $this->loadComponent('Flash');
         $this->loadComponent('Auth', [
             'authorize'=> 'Controller',
-            'authError' => 'Você não está autorizado a acessar esse local.',
+	'authError' => 'VocÃª nÃ£o estÃ¡ autorizado a acessar esse local.',
             'authenticate' => [
                 'Form' => [
                     'fields' => [
@@ -77,7 +77,7 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
         
-        // Permite a ação display, assim nosso pages controller
+        
         // continua a funcionar.
         //$this->Auth->allow(['display']);
     }

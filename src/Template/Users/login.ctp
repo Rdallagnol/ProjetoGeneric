@@ -1,4 +1,4 @@
-<?php
+Ôªø<?php
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -78,7 +78,7 @@ $cakeDescription = 'Agrobe';
 									<div class="widget-main">
 										<h4 class="header blue lighter bigger">
 											<i class="ace-icon fa fa-laptop blue"></i> 
-											Insira suas <?php echo utf8_encode('informaÁıes'); ?>
+											Insira suas informa√ß√µes 
 										</h4>
 
 										<div class="space-6"></div>

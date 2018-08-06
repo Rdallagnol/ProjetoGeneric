@@ -1,32 +1,42 @@
+
+
 <?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\User $user
- */
-?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $user->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?></li>
-   
-    </ul>
-</nav>
-<div class="users form large-9 medium-8 columns content">
-    <?= $this->Form->create($user) ?>
-    <fieldset>
-        <legend><?= __('Edit User') ?></legend>
-        <?php
-            echo $this->Form->control('name');
-            echo $this->Form->control('email');
-            echo $this->Form->control('password');
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
+   /**
+    * @var \App\View\AppView $this
+    * @var \App\Model\Entity\User $user
+    */
+   ?>
+<div class="row">
+   <div class="col-xs-12">
+      <?= $this->Form->create($user,array('class'=>'form-horizontal')) ?>
+      <fieldset>
+         <legend><?= __('Alteração do usuário') ?></legend>
+         <div class="form-group">
+            <div class="col-sm-9">
+               <?php
+                  echo $this->Form->control('name',array('label'=>array('class'=>'col-sm-3 control-label no-padding-right','text' => 'Nome '),'class' => 'col-xs-10 col-sm-5'));
+                  ?>
+            </div>
+         </div>
+         <div class="form-group">
+            <div class="col-sm-9">
+               <?php
+                  echo $this->Form->control('email',array('readonly' => 'readonly','label'=>array('class'=>'col-sm-3 control-label no-padding-right','text' => 'Email '),'class' => 'col-xs-10 col-sm-5'));
+                  ?>
+            </div>
+         </div>
+         <div class="form-group">
+            <div class="col-sm-9">
+               <?php
+                  echo $this->Form->control('password',array('label'=>array('class'=>'col-sm-3 control-label no-padding-right','text' => 'Password '),'class' => 'col-xs-10 col-sm-5'));
+                  ?>
+            </div>
+         </div>
+      </fieldset>
+      <div class="form-actions center">
+         <?= $this->Form->button('Submit ' . $this->Html->tag("i", "<span></span>",array("class" => "ace-icon fa fa-arrow-right icon-on-righ")),['class' => 'btn btn-sm btn-success']) ?>
+      </div>
+      <?= $this->Form->end() ?>
+   </div>
 </div>
+
