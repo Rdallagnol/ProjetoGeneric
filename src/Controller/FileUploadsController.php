@@ -8,7 +8,7 @@ use Cake\Filesystem\Folder;
 class FileUploadsController extends AppController {
   
     public function index(){
-        echo 'Hello World'; 
+        echo 'TESTAR CONTROLER'; 
     }
     
     public function isAuthorized($user)
