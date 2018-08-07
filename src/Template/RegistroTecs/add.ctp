@@ -22,7 +22,7 @@
             echo $this->Form->control('titulo');
         ?>  
      
-        <?php    echo $this->Form->control('descricao');
+        <?php    echo $this->Form->control('descricao',['rows'=>20]);
        
         ?>
 

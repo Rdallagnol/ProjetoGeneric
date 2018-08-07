@@ -82,7 +82,7 @@ $(document).ready(function () {
             failure("Erro de transporte do XHR. Código: " + xhr.status);
         };
 
-          alert(xhr.responseText);
+       
         
         xhr.onload = function() {
             var json;
