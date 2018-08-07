@@ -27,10 +27,11 @@ use Cake\Event\Event;
  */
 class AppController extends Controller
 {
-
     
     public function beforeFilter(Event $event)
     {
+        
+      
         $this->set('cakeDescription','Agrobe');
         if($this->Auth->user()){
             $this->Auth->allow();
@@ -57,7 +58,7 @@ class AppController extends Controller
         $this->loadComponent('Flash');
         $this->loadComponent('Auth', [
             'authorize'=> 'Controller',
-	'authError' => 'Você não está autorizado a acessar esse local.',
+	        'authError' => 'Você não está autorizado a acessar esse local.',
             'authenticate' => [
                 'Form' => [
                     'fields' => [
@@ -81,6 +82,7 @@ class AppController extends Controller
         // continua a funcionar.
         //$this->Auth->allow(['display']);
     }
+
     
     public function isAuthorized($user)
     {

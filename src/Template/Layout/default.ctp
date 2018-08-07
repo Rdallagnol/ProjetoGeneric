@@ -48,6 +48,9 @@
     <?= $this->Html->script('jquery.flot.min.js') ?> 
     <?= $this->Html->script('jquery.flot.pie.min.js') ?> 
     <?= $this->Html->script('jquery.flot.resize.min.js') ?> 
+        <?= $this->Html->script('jquery.min.js') ?> 
+    <?php echo $this->Html->script('tinymce/tinymce.min'); ?>
+    <?php echo $this->Html->script('custom-text-area-v1.0.3.js'); ?>
 
         <!-- ace scripts -->
     <?= $this->Html->script('ace-elements.min.js') ?> 
@@ -973,7 +976,7 @@
                                 <?= $this->Flash->render() ?>
                                 <?= $this->Flash->render('auth') ?>
                                 
-                                <div class="container clearfix">
+                                <div class="clearfix">
                                     <?= $this->fetch('content') ?>
                                 </div>
 
