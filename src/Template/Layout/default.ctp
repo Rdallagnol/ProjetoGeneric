@@ -48,7 +48,20 @@
     <?= $this->Html->script('jquery.flot.min.js') ?> 
     <?= $this->Html->script('jquery.flot.pie.min.js') ?> 
     <?= $this->Html->script('jquery.flot.resize.min.js') ?> 
-        <?= $this->Html->script('jquery.min.js') ?> 
+    <?= $this->Html->script('jquery.min.js') ?> 
+
+    <?= $this->Html->script('jquery.dataTables.min.js') ?> 
+    <?= $this->Html->script('jquery.dataTables.bootstrap.min.js') ?> 
+    <?= $this->Html->script('dataTables.buttons.min.js') ?> 
+    <?= $this->Html->script('buttons.flash.min.js') ?> 
+    <?= $this->Html->script('buttons.html5.min.js') ?> 
+    <?= $this->Html->script('buttons.print.min.js') ?> 
+    <?= $this->Html->script('buttons.colVis.min.js') ?> 
+    <?= $this->Html->script('dataTables.select.min.js') ?> 
+    <?= $this->Html->script('ace-extra.min.js') ?> 
+   
+
+
     <?php echo $this->Html->script('tinymce/tinymce.min'); ?>
     <?php echo $this->Html->script('custom-text-area-v1.0.3.js'); ?>
 

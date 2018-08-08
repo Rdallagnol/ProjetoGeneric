@@ -31,21 +31,21 @@
                         <div class="form-group">
                            <div class="col-sm-9">
                               <?php
-                                 echo $this->Form->control('name',array('label'=>array('class'=>'col-sm-3 control-label no-padding-right','text' => 'Nome '),'class' => 'col-xs-10 col-sm-5'));
+                                 echo $this->Form->control('name',array('label'=>array('class'=>'col-sm-3 control-label','text' => 'Nome '),'class' => 'col-xs-10 col-sm-5'));
                                  ?>
                            </div>
                         </div>
                         <div class="form-group">
                            <div class="col-sm-9">
                               <?php
-                                 echo $this->Form->control('email',array('readonly' => 'readonly','label'=>array('class'=>'col-sm-3 control-label no-padding-right','text' => 'Email '),'class' => 'col-xs-10 col-sm-5'));
+                                 echo $this->Form->control('email',array('readonly' => 'readonly','label'=>array('class'=>'col-sm-3 control-label','text' => 'Email '),'class' => 'col-xs-10 col-sm-5'));
                                  ?>
                            </div>
                         </div>
                         <div class="form-group">
                            <div class="col-sm-9">
                               <?php
-                                 echo $this->Form->control('password',array('label'=>array('class'=>'col-sm-3 control-label no-padding-right','text' => 'Password '),'class' => 'col-xs-10 col-sm-5'));
+                                 echo $this->Form->control('password',array('label'=>array('class'=>'col-sm-3 control-label','text' => 'Password '),'class' => 'col-xs-10 col-sm-5'));
                                  ?>
                            </div>
                         </div>

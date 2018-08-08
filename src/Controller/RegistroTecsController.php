@@ -57,10 +57,10 @@ class RegistroTecsController extends AppController
             $registroTec = $this->RegistroTecs->patchEntity($registroTec, $this->request->getData());
             $registroTec->user_id = $this->Auth->user('user_id');
             if ($this->RegistroTecs->save($registroTec)) {
-                $this->Flash->success('Relatório técnico registrado com sucesso.');
+                $this->Flash->success('Relatï¿½rio tï¿½cnico registrado com sucesso.');
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error('Não foi possível registrar Relatório.');
+            $this->Flash->error('Nï¿½o foi possï¿½vel registrar Relatï¿½rio.');
         }
         $this->set(compact('registroTec'));
     }
@@ -80,10 +80,10 @@ class RegistroTecsController extends AppController
             $registroTec->user_id = $this->Auth->user('user_id');
             
             if ($this->RegistroTecs->save($registroTec)) {
-                $this->Flash->success('Relatório técnico alterado com sucesso.');
+                $this->Flash->success('RelatÃ³rio tÃ©cnico alterado com sucesso.');
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error('Não foi possível registrar Relatório.');
+            $this->Flash->error('NÃ£o foi possÃ­vel registrar RelatÃ³rio.');
         }
         
         $this->set(compact('registroTec'));
@@ -98,11 +98,12 @@ class RegistroTecsController extends AppController
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
+        
         $registroTec = $this->RegistroTecs->get($id);
         if ($this->RegistroTecs->delete($registroTec)) {
-            $this->Flash->success(__('Relatório técnico removido com sucesso.'));
+            $this->Flash->success(__('RelatÃ³rio tÃ©cnico removido com sucesso.'));
         } else {
-            $this->Flash->error(__('Não foi possível remover o Relatório.'));
+            $this->Flash->error(__('NÃ£o foi possÃ­vel remover o RelatÃ³rio.'));
         }
         return $this->redirect(['action' => 'index']);
     }

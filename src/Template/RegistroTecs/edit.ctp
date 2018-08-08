@@ -4,29 +4,60 @@
  * @var \App\Model\Entity\User $user
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $user->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?></li>
-   
-    </ul>
-</nav>
-<div class="users form large-9 medium-8 columns content">
-    <?= $this->Form->create($user) ?>
-    <fieldset>
-        <legend><?= __('Edit User') ?></legend>
-        <?php
-            echo $this->Form->control('name');
-            echo $this->Form->control('email');
-            echo $this->Form->control('password');
+
+    <?= $this->Html->css('jquery-ui.custom.min.css') ?> 
+    <?= $this->Html->css('jquery.gritter.min.css') ?> 
+    <?= $this->Html->css('select2.min.css') ?> 
+    <?= $this->Html->css('bootstrap-datepicker3.min.css') ?> 
+    <?= $this->Html->css('bootstrap-editable.min.css') ?> 
+
+
+<div class="page-header">
+   <h1>
+      Editar Registro Técnico
+      <small>
+      <i class="ace-icon fa fa-angle-double-right"></i>
+      Edição do registro técnico
+      </small>
+   </h1>
+</div>
+
+<div class="row">
+    <div class="space-4"></div>
+                  <div class="col-xs-12 ">
+    <?= $this->Form->create($registroTec,['id' => 'RegistroTecForm','class'=>'form-horizontal']) ?>
+  
+        <div class="form-group ">
+                           <div class="col-sm-12 ">
+                              <?php
+                                 echo $this->Form->control('titulo',array('label'=>array('class'=>'col-sm-3 control-label','text' => 'Título '),'class' => 'col-xs-10 col-sm-5'));
+                                 ?>
+         </div>
+        </div>
+     
+      <div class="form-group">
+           <div class="col-sm-12">
+        <?php    echo $this->Form->control('descricao',['rows'=>20,'label'=>'Descrição']);
+       
         ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+
+          </div>
+                        </div>
+
+  
+    <div class="form-actions center">
+      <?php 
+ echo  $this->Html->link($this->Html->tag("i", "<span class=''></span>",array("class" => "ace-icon fa fa-reply "))
+                           . ' Voltar', array('class' => '', 'action' => 'index'),
+                        array('escape' => false));?> 
+  &nbsp; &nbsp; &nbsp;
+                        <?= $this->Form->button('Registrar ' . $this->Html->tag("i", "<span></span>",array("class" => "ace-icon fa fa-arrow-right icon-on-righ")),['class' => 'btn btn-sm btn-success']) ?>
+                     </div>
+
+
     <?= $this->Form->end() ?>
 </div>
+</div>
+</div>
+
+
