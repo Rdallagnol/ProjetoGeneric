@@ -88,3 +88,8 @@ Router::scope('/bookmarks', [
     function ($routes) {
         $routes->connect('/tagged/*', ['action' => 'tags']);
 });
+Router::scope('/registro-tecs/view', function ($routes) {
+    $routes->extensions('pdf');
+    $routes->connect('/view/*', ['controller' => 'RegistroTecs', 'action' => 'view']);
+    $routes->fallbacks('InflectedRoute');
+});

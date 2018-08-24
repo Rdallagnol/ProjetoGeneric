@@ -24,8 +24,21 @@ CREATE TABLE IF NOT EXISTS `ag_registro_tec` (
   `titulo` varchar(255) NOT NULL,
   `descricao` TEXT NOT NULL,
   `user_id` int(11) NOT NULL,
+  'img_name' varchar2(200),
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`tec_reg_id`)
 ) 
 
+
+##
+CREATE TABLE IF NOT EXISTS `cl_cliente` (
+  `cli_id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) NOT NULL,
+  `email` varchar2(200),
+  `user_id` int(11) NOT NULL,
+  'img_name' varchar2(200),
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`cli_id`)
+) 

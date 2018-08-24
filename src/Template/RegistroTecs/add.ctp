@@ -51,7 +51,7 @@
                            . ' Voltar', array('class' => '', 'action' => 'index'),
                         array('escape' => false));?> 
   &nbsp; &nbsp; &nbsp;
-                        <?= $this->Form->button('Registrar ' . $this->Html->tag("i", "<span></span>",array("class" => "ace-icon fa fa-arrow-right icon-on-righ")),['class' => 'btn btn-sm btn-success']) ?>
+                        <?= $this->Form->button('Registrar ' . $this->Html->tag("i", "<span></span>",array("class" => "ace-icon fa fa-arrow-right icon-on-right")),['class' => 'btn btn-sm btn-success']) ?>
                      </div>
 
 

@@ -2,6 +2,7 @@
 namespace App\Controller;
 use App\Controller\AppController;
 use App\Model\Entity\RegistroTec;
+use Cake\Core\Configure;
 /**
  * Bookmarks Controller
  *
@@ -9,10 +10,20 @@ use App\Model\Entity\RegistroTec;
  *
  * @method \App\Model\Entity\Bookmark[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
+
+
+
 class RegistroTecsController extends AppController
 {
     public function isAuthorized($user)
     {
+     
+        $id = $this->request->getParam('pass.0');
+        
+        $registroTec = $this->RegistroTecs->get($id);
+        if ($registroTec->user_id == $user['id']) {
+            return true;
+        }
         return parent::isAuthorized($user);
     }
     
@@ -24,12 +35,17 @@ class RegistroTecsController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
+        
+        /* 
+         * SE FICAR PESADO ARRUMAR PAGINAÇÃO
+         * $this->paginate = [
             'conditions' => [
                 'RegistroTecs.user_id' => $this->Auth->user('user_id')
             ]
         ];
-        $this->set('registroTec', $this->paginate($this->RegistroTecs));
+         */
+        $this->set('registroTec', $this->RegistroTecs->find('all', array( 'conditions' => [
+                                                                'RegistroTecs.user_id' => $this->Auth->user('user_id')] )));
     }
     /**
      * View method
@@ -40,9 +56,23 @@ class RegistroTecsController extends AppController
      */
     public function view($id = null)
     {
+      
         $registroTec = $this->RegistroTecs->get($id, [
-            'contain' => ['Users']
+            'contain' => ['Users'],
+            'conditions' => [
+                'RegistroTecs.user_id' => $this->Auth->user('user_id')
+            ]
         ]);
+        
+       
+        
+        $this->viewBuilder()->options([
+            'pdfConfig' => [
+                'orientation' => 'portrait',
+                'filename' => 'RegistroTec_' . $id . '.pdf'
+            ]
+        ]);
+        
         $this->set('registroTec', $registroTec);
     }
     /**
@@ -57,10 +87,10 @@ class RegistroTecsController extends AppController
             $registroTec = $this->RegistroTecs->patchEntity($registroTec, $this->request->getData());
             $registroTec->user_id = $this->Auth->user('user_id');
             if ($this->RegistroTecs->save($registroTec)) {
-                $this->Flash->success('Relat�rio t�cnico registrado com sucesso.');
+                $this->Flash->success('Relatório técnico registrado com sucesso.');
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error('N�o foi poss�vel registrar Relat�rio.');
+            $this->Flash->error('Não foi possível registrar Relatório.');
         }
         $this->set(compact('registroTec'));
     }
@@ -73,7 +103,11 @@ class RegistroTecsController extends AppController
      */
     public function edit($id = null)
     {
-        $registroTec = $this->RegistroTecs->get($id);
+        $registroTec = $this->RegistroTecs->get($id,[   
+            'conditions' => [
+                'RegistroTecs.user_id' => $this->Auth->user('user_id')
+            ]
+        ]);
         
         if ($this->request->is(['patch', 'post', 'put'])) {
             $registroTec = $this->RegistroTecs->patchEntity($registroTec, $this->request->getData());
@@ -99,7 +133,11 @@ class RegistroTecsController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         
-        $registroTec = $this->RegistroTecs->get($id);
+        $registroTec = $this->RegistroTecs->get($id,[
+            'conditions' => [
+                'RegistroTecs.user_id' => $this->Auth->user('user_id')
+            ]
+        ]);
         if ($this->RegistroTecs->delete($registroTec)) {
             $this->Flash->success(__('Relatório técnico removido com sucesso.'));
         } else {
@@ -107,6 +145,8 @@ class RegistroTecsController extends AppController
         }
         return $this->redirect(['action' => 'index']);
     }
+    
+    
     
     
 }

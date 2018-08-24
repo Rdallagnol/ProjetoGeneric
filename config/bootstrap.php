@@ -197,3 +197,19 @@ Type::build('timestamp')
 //Inflector::rules('irregular', ['red' => 'redlings']);
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
+
+Plugin::load('CakePdf', ['bootstrap' => true]);
+
+Configure::write('CakePdf', [
+    'engine' => [
+        'className' => 'CakePdf.Mpdf',
+        // 'binary' => '/usr/local/bin/wkhtmltopdf', // Si estas en Mac OS X / Linux
+      //  'binary' => 'C:\\Progra~1\\wkhtmltopdf\\bin\\wkhtmltopdf.exe',
+        'options' => [
+            'print-media-type' => false,
+            'outline' => true,
+            'dpi' => 96
+        ],
+    ],
+    'download' => true
+]);

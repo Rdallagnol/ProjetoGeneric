@@ -2,7 +2,7 @@
 use Cake\Core\Configure;
 use Cake\Error\Debugger;
 
-$this->layout = 'error';
+
 
 if (Configure::read('debug')) :
     $this->layout = 'dev_error';
@@ -31,8 +31,46 @@ endif;
 $this->end();
 endif;
 ?>
-<h2><?= h($message) ?></h2>
-<p class="error">
-    <strong><?= __d('cake', 'Error') ?>: </strong>
-    <?= __d('cake', 'The requested address {0} was not found on this server.', "<strong>'{$url}'</strong>") ?>
-</p>
+
+<div class="row">
+                            <div class="col-xs-12">
+                                <!-- PAGE CONTENT BEGINS -->
+
+                                <div class="error-container">
+                                    <div class="well">
+                                        <h1 class="grey lighter smaller">
+                                            <span class="blue bigger-125">
+                                                <i class="ace-icon fa fa-sitemap"></i>
+                                                <?= h($message) ?>
+                                            </span>
+                                         
+                                        </h1>
+
+                                        <hr />
+                                        <h3 class="lighter smaller"><?= __d('cake', 'O endereço {0} não foi encontrado  no servidor.', "<strong>'{$url}'</strong>") ?></h3>
+
+                                        <div>
+                                          
+
+                                            <div class="space"></div>
+                                            
+                                        </div>
+
+                                        <hr />
+                                        <div class="space"></div>
+
+                                        <div class="center">
+                                            <a href="javascript:history.back()" class="btn btn-grey">
+                                                <i class="ace-icon fa fa-arrow-left"></i>
+                                                Voltar
+                                            </a>
+
+
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- PAGE CONTENT ENDS -->
+                            </div><!-- /.col -->
+                        </div><!-- /.row -->

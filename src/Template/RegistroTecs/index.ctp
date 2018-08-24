@@ -63,24 +63,24 @@
          <table id="dynamic-table" class="table table-striped table-bordered table-hover">
             <thead>
                <tr>
-                  <th></th>
-                  <th>Código</th>
+                  <th class="hidden-480"></th>
+                  <th class="hidden-480">Código</th>
                   <th>Título</th>
                   <th><i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i> Criação</th>
-                  <th><i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i> Atualização</th>                
+                  <th class="hidden-480"><i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i> Atualização</th>                
                   <th>Ações</th>
                </tr>
             </thead>
             <tbody>
                  <?php foreach ($registroTec as $registro): ?>
                <tr>
-                  <td></td>
-                  <td>
+                  <td class="hidden-480"></td>
+                  <td class="hidden-480">
                      <?= $this->Number->format($registro->tec_reg_id) ?></a>
                   </td>
                   <td><?= h($registro->titulo) ?></td>
                   <td><?= h($registro->created) ?></td>
-                  <td><?= h($registro->modified) ?></td>
+                  <td class="hidden-480"><?= h($registro->modified) ?></td>
                 
                   <td>
                      <div class="hidden-sm hidden-xs action-buttons">
@@ -130,6 +130,10 @@
                              . ' Criar Registro', array('class' => '', 'action' => 'add'),array('escape' => false));?> 
 
 
+
+
+
+
 <script type="text/javascript">
    jQuery(function($) {
        //initiate dataTables plugin
@@ -143,29 +147,8 @@
              null, null,null, null,
              { "bSortable": false }
            ],
-           "aaSorting": [],
+           "aaSorting": [],          
            
-           
-           //"bProcessing": true,
-           //"bServerSide": true,
-           //"sAjaxSource": "http://127.0.0.1/table.php"   ,
-   
-           //,
-           //"sScrollY": "200px",
-           //"bPaginate": false,
-   
-           //"sScrollX": "100%",
-           //"sScrollXInner": "120%",
-           //"bScrollCollapse": true,
-           //Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
-           //you may want to wrap the table inside a "div.dataTables_borderWrap" element
-   
-           //"iDisplayLength": 50
-   
-   
-           select: {
-               style: 'multi'
-           }
        } );
    
        
@@ -227,10 +210,7 @@
                else $(this).tooltip({container: 'body', title: $(this).text()});
            });
        }, 500);
-       
-       
-       
-       
+             
        
        myTable.on( 'select', function ( e, dt, type, index ) {
            if ( type === 'row' ) {

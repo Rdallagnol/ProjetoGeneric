@@ -27,7 +27,7 @@
                         <div class="col-xs-12 col-sm-3 center">
                            <div>
                               <span class="profile-picture">
-                              <?php echo $this->Html->image('logo.png', ['alt' => 'userImg', 'class' => 'editable img-responsive']); ?>
+                              <?php echo $this->Html->image('uploads/'.$user['img_name'], ['alt' => 'userImg', 'class' => 'editable img-responsive']); ?>
                               </span>
                               <div class="space-4"></div>
                               <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">

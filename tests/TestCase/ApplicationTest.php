@@ -21,7 +21,7 @@ use Cake\Http\Middleware\CsrfProtectionMiddleware;
 use Cake\Routing\Middleware\AssetMiddleware;
 use Cake\Routing\Middleware\RoutingMiddleware;
 use Cake\TestSuite\IntegrationTestCase;
-use Symfony\Component\Filesystem\Exception\InvalidArgumentException;
+use Symfony\Component\Console\Exception\InvalidArgumentException;
 
 /**
  * ApplicationTest class

@@ -31,12 +31,18 @@
 
    
     
-	<?= $this->Html->css('bootstrap.min.css') ?> 
+    <?= $this->Html->css('bootstrap.min.css') ?> 
     <?= $this->Html->css('/font-awesome/4.5.0/css/font-awesome.min.css') ?> 
     <?= $this->Html->css('ace-skins.min.css') ?> 
     <?= $this->Html->css('fonts.googleapis.com.css') ?> 
     <?= $this->Html->css('ace.min.css') ?> 
     <?= $this->Html->css('ace-rtl.min.css') ?> 
+    <?= $this->Html->css('bootstrap-editable.min.css') ?> 
+    <?= $this->Html->css('jquery.gritter.min.css') ?> 
+    <?= $this->Html->css('jquery-ui.custom.min.css') ?> 
+    <?= $this->Html->css('select2.min.css') ?> 
+    <?= $this->Html->css('ace-skins.min.css') ?> 
+
     <?= $this->Html->script('jquery-2.1.4.min.js') ?> 
     <?= $this->Html->script('bootstrap.min.js') ?> 
 
@@ -59,27 +65,25 @@
     <?= $this->Html->script('buttons.colVis.min.js') ?> 
     <?= $this->Html->script('dataTables.select.min.js') ?> 
     <?= $this->Html->script('ace-extra.min.js') ?> 
-   
-
 
     <?php echo $this->Html->script('tinymce/tinymce.min'); ?>
     <?php echo $this->Html->script('custom-text-area-v1.0.3.js'); ?>
 
         <!-- ace scripts -->
     <?= $this->Html->script('ace-elements.min.js') ?> 
-    <?= $this->Html->script('ace.min.js') ?> 	
+    <?= $this->Html->script('ace.min.js') ?>    
 
     <!--[if lte IE 9]>
-	   <?= $this->Html->css('ace-ie.min.css') ?> 
-	<![endif]-->
+       <?= $this->Html->css('ace-ie.min.css') ?> 
+    <![endif]-->
 
-	
-	<!--[if lte IE 8]>
-	
-	   <?= $this->Html->script('html5shiv.min.js') ?> 
-	   <?= $this->Html->script('respond.min.js') ?> 
-		
-		<![endif]-->
+    
+    <!--[if lte IE 8]>
+    
+       <?= $this->Html->script('html5shiv.min.js') ?> 
+       <?= $this->Html->script('respond.min.js') ?> 
+        
+        <![endif]-->
     
     
     <?= $this->fetch('meta') ?>
@@ -88,7 +92,7 @@
 </head>
 <body class="no-skin">
     
-	<div id="navbar" class="navbar navbar-default ace-save-state">
+    <div id="navbar" class="navbar navbar-default ace-save-state">
             <div class="navbar-container ace-save-state" id="navbar-container">
                 <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
                     <span class="sr-only">Toggle sidebar</span>
@@ -368,10 +372,10 @@
                                 </li>
                             </ul>
                         </li> -->
-
+                  
                         <li class="light-blue dropdown-modal">
                             <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                                <?php echo $this->Html->image('logo.png', ['alt' => 'userImg', 'class' => 'nav-user-photo']); ?>
+                                <?php echo $this->Html->image('uploads/'.$user['img_name'], ['alt' => 'userImg', 'class' => 'nav-user-photo']); ?>
                                 <span class="user-info">
                                     <small>Bem vindo,</small>
                                     <?= $this->request->session()->read('Auth.User.name'); ?>

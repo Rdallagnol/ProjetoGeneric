@@ -51,10 +51,6 @@ class UsersController extends AppController
      */
     public function view($id = null)
     {
-        /*$user = $this->Users->get($id, [
-            'contain' => ['Bookmarks']
-        ]);
-        */
         $user = $this->Users->get($id);
         $this->set('user', $user);
     }
@@ -71,11 +67,11 @@ class UsersController extends AppController
             $user = $this->Users->patchEntity($user, $this->request->getData());
             
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
+                $this->Flash->success(__('Usuário registrado com sucesso.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+            $this->Flash->error(__('Usúario não foi registrado, tente novamente.'));
         }
         $this->set(compact('user'));
     }
@@ -93,13 +89,28 @@ class UsersController extends AppController
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
+            
+            $imgOrig = $user['img_name'];
+            
             $user = $this->Users->patchEntity($user, $this->request->getData());
-            if ($this->Users->save($user)) {
-                $this->Flash->success(__('Usuário foi alterado com sucesso.'));
-
-                return $this->redirect(['action'=>'view',$id]);
-            }
-            $this->Flash->error(__('Erro ao alterar usuário.'));
+          
+            $user['img_name'] = $this->Upload->send($this->request->getData('img_name'),$imgOrig, $this->Auth->user('user_id'));
+            
+        
+          
+            if($user['img_name'] <> $imgOrig) {
+            
+                if ($this->Users->save($user)) {        
+                    
+                    $this->Flash->success(__('Usuário foi alterado com sucesso.'));
+    
+                    return $this->redirect(['action'=>'view',$id]);
+                }
+                
+                $this->Flash->error(__('Erro ao alterar usuário.')); 
+            }else{
+                $this->Flash->error(__('Imagem muito grande.')); 
+            } 
         }
         $this->set(compact('user'));
     }
