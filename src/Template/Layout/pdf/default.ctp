@@ -11,24 +11,18 @@
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
-<body class="no-skin" style="">
+<body class="no-skin">
 
     <div id="header">
-      
-
-                            <div>
-                                <div class="alert">
-                                    <span class="user-info">
-                                        <small>Consultor</small>
-                                        <br>
-                                        <?php echo $this->request->session()->read('Auth.User.name')  ; ?>                                 
-                                    </span>
-                                </div>                                
-                            </div>    
-
-    
-
-                      
+        <div>
+            <div class="alert">
+                <span class="user-info">
+                    <small>Consultor</small>
+                    <br>
+                    <?php echo $this->request->session()->read('Auth.User.name')  ; ?>                                 
+                </span>
+            </div>                                
+        </div>    
     </div> 
 
     <div id="container">
@@ -36,5 +30,6 @@
             <?= $this->fetch('content') ?>
         </div>
     </div>
+
 </body>
 </html>

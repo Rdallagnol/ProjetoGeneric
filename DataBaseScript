@@ -31,13 +31,21 @@ CREATE TABLE IF NOT EXISTS `ag_registro_tec` (
 ) 
 
 
-##
+## modulo cliente
 CREATE TABLE IF NOT EXISTS `cl_cliente` (
   `cli_id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
-  `email` varchar2(200),
-  `user_id` int(11) NOT NULL,
-  'img_name' varchar2(200),
+  `email` varchar(200) DEFAULT NULL,
+  `telefone` varchar(30) DEFAULT NULL,
+  `cpf` varchar(30) DEFAULT NULL,
+  `endereco` varchar(200) DEFAULT NULL,
+  `cidade` varchar(200) DEFAULT NULL,
+  `bairro` varchar(200) DEFAULT NULL,
+  `cidade` varchar(200) DEFAULT NULL,
+  `uf` varchar(2) DEFAULT NULL ,
+  `img_name` varchar(200) DEFAULT NULL,
+  `status` int(1) not null,
+  `user_id` int not null,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`cli_id`)
